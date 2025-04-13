@@ -15,6 +15,13 @@
     opacity: 0;
     transform:scale(0);
 
+    .btn__primary {
+        margin-block-start: auto;
+        @include small {
+            margin-block-start: initial;
+        }
+    }
+
     @include small {
         position:absolute;
         top: 50%;
