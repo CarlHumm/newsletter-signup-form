@@ -9,7 +9,7 @@ class NewsletterForm {
         this.card = document.querySelector(`.card:has(${formSelector})`);
         this.dismiss = document.getElementById('dismiss');
         this.timer = null;
-        this.isDesktop = window.matchMedia('(min-width: 57.5rem)');
+        this.isDesktop = window.matchMedia('(min-width: 57.5rem)').matches;
         this.isValid = false;
         this.emailRegExp = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         this.init();
@@ -87,7 +87,9 @@ class NewsletterForm {
 
     async showSuccess() {
 
-        let zoomDelay = this.isDesktop ? 850 : 425;
+        console.log(this.isDesktop);
+
+        let zoomDelay = this.isDesktop ? 850 : 345;
 
         this.clearError();
 

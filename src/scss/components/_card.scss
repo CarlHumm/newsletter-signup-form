@@ -98,19 +98,17 @@
 }
 
 .animate\:zoom {
-    --timing: 1s;
 
-    animation: zoom var(--timing) ease-in-out forwards;
+    animation: zoom 0.4s ease-in-out forwards;
 
     
     @include small {
-        animation: zoom-sm var(--timing) ease-in-out forwards;
+        animation: zoom-sm 0.45s  ease-in-out forwards;
     }
 
     @include medium() {
-        --timing: 1700ms;
 
-        animation: zoom-md var(--timing) ease-in-out forwards;
+        animation: zoom-md 1.7s ease-in-out forwards;
     }
     
 }
