@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: Coming Soon..
 - Live Site URL: [https://carlhumm.github.io/newsletter-signup-form/](https://carlhumm.github.io/newsletter-signup-form/)
 
 ## My process
