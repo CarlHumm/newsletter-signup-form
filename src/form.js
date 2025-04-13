@@ -90,7 +90,7 @@ class NewsletterForm {
 
         console.log(this.isDesktop);
 
-        let zoomDelay = this.isDesktop ? 850 : 500;
+        let zoomDelay = this.isDesktop ? 850 : 700;
 
         this.clearError();
 
