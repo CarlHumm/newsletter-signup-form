@@ -38,6 +38,5 @@ npm-debug.log*
 *.pem
 .DS_Store
 Thumbs.db
-*.md
-
+style-guide.md
 design/
