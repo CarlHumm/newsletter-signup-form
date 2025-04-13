@@ -81,6 +81,7 @@ class NewsletterForm {
         this.errorMessage.classList.remove('hidden');
     }
 
+
     clearError() {
         this.errorMessage.classList.add('hidden');
     }
@@ -89,11 +90,9 @@ class NewsletterForm {
 
         console.log(this.isDesktop);
 
-        let zoomDelay = this.isDesktop ? 850 : 345;
+        let zoomDelay = this.isDesktop ? 850 : 500;
 
         this.clearError();
-
-      
 
         this.successDialog.querySelector('span').textContent = this.emailInput.value;
 

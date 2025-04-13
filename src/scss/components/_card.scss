@@ -103,7 +103,7 @@
 
     
     @include small {
-        animation: zoom-sm 0.45s  ease-in-out forwards;
+        animation: zoom-sm 0.5s  ease-in-out forwards;
     }
 
     @include medium() {

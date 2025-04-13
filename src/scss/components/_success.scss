@@ -50,7 +50,7 @@
     animation: success 1s ease-in-out forwards;
     transform-origin: center center;
     @include small {
-        animation: success-sm 1s ease-in-out forwards;
+        animation: success-sm 0.5s ease-in-out forwards;
     }
     @include medium {
         animation: success-md 1.5s ease-in-out forwards;
