@@ -1,0 +1,52 @@
+
+@use '../queries' as *;
+
+label {
+    font-size: 0.75rem;
+}
+
+#newsletter-form {
+display: flex;
+flex-direction: column;
+}
+
+
+#email {
+    outline: none;
+    padding: 1rem 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--grey);
+    color: var(--blue-800);
+    border-radius: var(--cta-radius);
+    width: 100%;
+
+    &::placeholder {
+        color:var(--grey);
+    }
+
+    &.invalid {
+        background: #FFE7E6;
+        border: 1px solid #FF6155;
+        color: var(--orange);
+        &::placeholder {
+            color:var(--orange);
+        }
+    }
+}
+
+.newsletter-form__group {
+    display: flex;
+    justify-content:space-between;
+    margin-block-end:var(--spacing-100);
+}
+
+.newsletter-form__group:has(#email) {
+    position:relative;
+    align-items:center;
+    justify-content:flex-end;
+    margin-block-end:var(--spacing-300);
+
+    @include medium {
+    margin-block-end:var(--spacing-300);
+    }
+}

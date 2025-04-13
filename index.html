@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Newsletter sign-up form with success message</title>
+</head>
+<body>
+<div id="stars"></div>
+<h1 class="sr-only">Animated Newsletter Form created for Front End Mentor by Carl Humm</h1>
+  <!-- Sign-up form start -->
+<main>
+  <article class="card">  
+    <div class="card__content">
+    <section class="card__summary">
+    <h2 class="card__title">Stay updated!</h2>
+    <p class="card__subtitle">Join 60,000+ product managers receiving monthly updates on:</p>
+    <ul class="card__benefits">
+      <li><span class="list-item__content">Product discovery and building what matters</span></li>
+      <li><span class="list-item__content">Measuring to ensure updates are a success</span></li>
+      <li><span class="list-item__content">And much more!</span></li>
+    </ul>
+  </section>
+  <form id="newsletter-form" method="POST" action="/" novalidate>
+  <div class="newsletter-form__group">
+    <label for="email" class="text-bold">Email Address</label>
+    <span class="error hidden" data-field="email" aria-live="polite"> Valid Email Required!</span>
+  </div>
+  <div class="newsletter-form__group">
+    <input id="email" type="email" name="newsletter-email" placeholder="Example@email.com..." required autocomplete="off">
+    <div class="progress-indicator">
+      <span class="progress-indicator__circle"></span>
+      <span class="progress-indicator__circle"></span>
+      <span class="progress-indicator__circle"></span>
+    </div>
+    <svg class="error__icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"><g fill="none"><circle cx="10.5" cy="10.5" r="10.5" /><path stroke="#FFF" stroke-width="2" d="M6 11.381 8.735 14 15 8"/></g></svg> 
+  </div>
+  <button class="btn__primary" type="submit">
+    Subscribe to monthly newsletter
+  </button>
+  </form>
+</div>
+<picture class="card__image">
+  <source srcset="assets/images/illustration-sign-up-desktop.svg" media="(min-width: 57.5rem)">
+  <img src="./assets/images/illustration-sign-up-mobile.svg" aria-hidden="true" alt="">
+</picture>
+  <!-- Sign-up form end -->
+</article>
+
+  <!-- Success message start -->
+  <dialog class="card__success" aria-expanded="false">
+    <img src="../assets/images/icon-list.svg" alt="" aria-hidden="true">
+    <h2 class="card__title">Thanks for subscribing!</h2>
+    <p>A confirmation email has been sent to <span class="text-bold">ash@loremcompany.com</span>.
+    Please open it and click the button inside to confirm your subscription.</p>
+      <button id="dismiss" class="btn__primary">Dismiss message</button>
+    <!-- Success message end -->
+    </dialog>
+</main>  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.linkedin.com/in/carlhumm/">Carl Humm</a>.
+  </div>
+  <script type="module" src="./src/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tsparticles/preset-stars@3/tsparticles.preset.stars.bundle.min.js"></script>
+</body>
+</html>

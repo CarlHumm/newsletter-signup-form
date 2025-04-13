@@ -1,0 +1,9 @@
+@mixin card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    overflow: hidden;
+    gap:2rem;
+    border-radius: var(--card-radius);
+    z-index:1;
+}

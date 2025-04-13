@@ -1,0 +1,191 @@
+
+
+@keyframes indicator {
+  0% {
+       transform: translateY(0);
+       opacity:0.9;
+
+  }
+
+  50% {
+      transform: translateY(-100%);
+      opacity:1;
+  }
+
+  100% {
+      transform: translateY(0);
+      opacity:0.9;
+  }
+}
+
+
+@keyframes fadeOut {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0); 
+    opacity: 0;
+  }
+}
+
+
+@keyframes fadeIn {
+  0% {
+    transform: scale(0) translateX(0);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1) translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes zoom {
+
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+
+@keyframes zoom-sm {
+
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+
+
+@keyframes zoom-md {
+  0% {
+    transform: scale(1) translateX(0);
+    opacity:1;
+  }
+
+  25% {
+    transform: scale(1) translateX(-20%);
+    opacity:1;
+  }
+
+  90% {
+    transform: scale(15) translateX(-25%);
+    opacity:0.8;
+  }
+  100% {
+    transform: scale(20) translateX(-25%);
+    opacity:0;
+  }
+
+}
+
+
+@keyframes success {
+
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes success-sm {
+
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translate(-50%, -50%)  scale(0);
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translate(-50%, -50%)  scale(1);
+    opacity: 1;
+  }
+}
+
+
+@keyframes success-md {
+
+  0% {
+    transform: translate(-50%, -50%)  scale(0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%)  scale(1);
+    opacity: 1;
+  }
+}
+
+
+@keyframes slideOut {
+
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+
+@keyframes slideIn {
+
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes wiggle {
+
+  0% { 
+    transform: translateX(0); 
+  }
+
+  25% { 
+    transform: translateX(-5px); 
+  }
+
+  50% { 
+    transform: translateX(5px); 
+  }
+
+  75% { 
+    transform: translateX(-5px);
+    }
+
+  100% { 
+    transform: translateX(0); 
+  }
+}

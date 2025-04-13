@@ -1,0 +1,32 @@
+
+input.valid ~ .error__icon {
+    opacity: 1;
+    transform:scale(1);
+}
+
+[data-field="email"] {
+    position: relative; 
+    transition: transform 0.5s ease; 
+    display: inline-block;
+}
+
+.error {
+    font-size:0.75rem;
+    font-weight:var(--text-bold);
+    color: var(--orange);
+    transition:0.5s ease-in-out;
+    border-radius:10px;
+    &__icon {
+        position:absolute;
+        transform:scale(0);
+        right: 1.5rem;
+        transition: opacity 0.1s transform 0.5s ease-in;
+        opacity: 0;
+        circle {
+            fill: transparent;
+        }
+        path {
+            stroke: green;
+        }
+    }
+}

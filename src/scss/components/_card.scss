@@ -1,0 +1,165 @@
+@use '../queries' as *;
+@use '../animations' as *;
+
+.card {
+
+    display: flex;
+    flex-direction: column-reverse;
+    background-color: var(--white);
+    overflow: hidden;
+    max-width: var(--card-mw);
+    transform: scale(1) translateX(0);
+
+
+    @include small {
+        border-radius: var(--card-radius);
+        padding: var(--spacing-300);
+    }
+
+    @include medium {
+
+        flex-direction: row;
+        padding: var(--spacing-500);
+        gap: var(--spacing-400);
+    }
+
+    @include large{
+        flex-direction: row;
+        padding: var(--spacing-400);
+        gap: var(--spacing-800);
+    }
+
+    &__content {
+        display: flex;
+        flex: 1 1 50%;
+        flex-direction: column;
+        padding-block: var(--spacing-500) var(--spacing-550);
+        padding-inline: var(--spacing-300);
+        gap: var(--spacing-500);
+
+        @include small {
+            padding-block-end: 0;
+            padding-inline: 0;
+        }
+        @include medium {
+            justify-content:center;
+            padding-block: 0;
+            justify-content:center;
+        }
+
+        @include large {
+            gap: var(--spacing-400);
+        }
+    }
+
+    &__summary {
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-300);
+    }
+
+    &__title {
+        font-size: 2.5rem;
+        color:var(--blue-800);
+        line-height: var(--text-large-lineHeight);
+        @include medium {
+            font-size: var(--text-large-size);
+        }
+    }
+
+    &__image {
+        position:relative;
+        flex: 1 1 50%;
+        display: flex;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        background: var(--blue-700);
+        overflow: hidden;
+        mask-image: radial-gradient(ellipse 250% 180% at center, 
+        rgba(0, 0, 0, 1) 15%, 
+        rgba(0, 0, 0, 0.8) 40%, 
+        rgba(0, 0, 0, 0) 80%);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        @include small {
+            border-radius:1rem;
+        }
+    }
+
+    &--reset {
+        transform: translate(0, 0) scale(0);
+        transform-origin: center;
+        position: relative;
+    }
+}
+
+.animate\:zoom {
+    --timing: 1s;
+
+    animation: zoom var(--timing) ease-in-out forwards;
+
+    
+    @include small {
+        animation: zoom-sm var(--timing) ease-in-out forwards;
+    }
+
+    @include medium() {
+        --timing: 1700ms;
+
+        animation: zoom-md var(--timing) ease-in-out forwards;
+    }
+    
+}
+
+@media (prefers-reduced-motion) {
+.animate\:zoom {
+    animation: none;
+}
+}
+
+  
+.card--reset {
+    transform: translateX(-100%);
+    opacity: 0;
+
+    animation: slideIn 1s ease-in-out forwards;
+    animation-play-state: paused;
+
+    @include small {
+        animation: fadeIn 1s ease-in-out forwards;
+        }
+}
+
+
+@include medium {
+    .card.animate\:zoom {
+        transition: transform 0.5s ease-in-out;
+        .card__image {
+            img {
+                opacity: 0;
+            }
+         }
+    }
+}
+
+#stars {
+    opacity: 0;
+}
+
+body:has(.subscribed) #stars,
+body:has(.subscribed--reset) #stars {
+    transition: opacity 0.5s ease-in-out;
+}
+
+body:has(.subscribed) #stars {
+    opacity: 1;
+}
+
+body:has(.subscribed--reset) #stars {
+    opacity: 0;
+}
+

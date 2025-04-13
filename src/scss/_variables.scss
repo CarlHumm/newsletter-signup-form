@@ -1,0 +1,48 @@
+@use 'sass:color';
+@use './queries' as *;
+
+:root {
+    // Colours
+    --white: #FFFFFF;
+    --grey: #949494;
+    --blue-800: #242742;
+    --blue-700: #36384D;
+    --orange: #FF6155;
+    --gradient: linear-gradient(90deg, #FF6A3A 0%, #FF527B 100%);
+
+    --card-radius: 2.25rem;
+    --card-mw: 56.5rem;
+    --cta-radius: 0.5rem;
+    --cta-shadow: 0px 16px 32px rgba(255, 97, 85, 0.5);
+
+
+    // Type
+    --text-base-family: 'Roboto', sans-serif;
+    --text-large-size: 56px;
+    --text-large-lineHeight: 1.0;
+    --text-base-size: 1rem;
+    --text-base-lineHeight: 1.5;
+    --text-bold: 700;
+
+    
+    // Spacing
+    --spacing-100: 0.5rem;
+    --spacing-200: 1rem;
+    --spacing-300: 1.5rem;
+    --spacing-400: 2rem;
+    --spacing-500: 2.5rem;
+    --spacing-550: 2.75rem;
+    --spacing-600: 3rem;
+    --spacing-800: 4rem;
+    --spacing-900: 4.5rem;
+    --spacing-1300: 6.5rem;
+
+}
+
+
+@include medium {
+   :root {
+    --zoomTiming: 3000;
+   }
+}
+

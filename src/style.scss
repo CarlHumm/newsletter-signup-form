@@ -1,0 +1,135 @@
+@use './scss/reset';
+@use './scss/variables' as *;
+@use './scss/queries' as *;
+
+@use './scss/components/index';
+
+.attribution {
+    display: none;
+}
+
+body {
+    font-family: var(--text-base-family);
+    background-color: var(--blue-700);
+    color: var(--blue-800);
+    line-height: 1.5;
+    width:100%;
+    overflow-x: hidden;
+}
+
+main {
+    min-height: 100vh;
+    @include small {
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        padding: 1rem;
+    }
+    @include medium {
+        padding-inline: 2rem;
+    }
+    @include large {
+        padding-inline: 0;
+    }
+}
+
+img {
+width:100%;
+max-width: 100%;
+}
+
+ul {
+    list-style-position: outside;
+    padding-left: 1.3rem
+}
+
+li {
+    gap:1rem;
+    padding-left:1rem;
+    line-height:1.5;
+    &::marker {
+        content: url('../assets/images/icon-list.svg');
+        font-size: 1.5rem;
+    }
+
+    span {
+    display: block;
+    position: relative;
+    transform: translateY(-7.5%);
+    }
+}
+
+
+.hidden {
+    opacity:0;
+    visibility:hidden;
+}
+
+.progress-indicator {
+
+    position:absolute;
+    right: 1.5rem;
+    top: 1.8rem;
+    display: flex;
+    gap: 2px;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out; 
+
+    &__circle {
+        transform:translateY(0);
+        border-radius:50%;
+        width:8px;
+        height:8px;
+        background: transparent;
+        border:2px solid var(--grey);
+        &:first-of-type() {
+            animation-delay: 0.25s;
+        }
+        &:nth-of-type(2) {
+            animation-delay: 0.5s;
+        }
+        &:last-of-type() {
+            animation-delay: 0.8s;
+        }
+    }
+}
+
+.progress-indicator:has(.animate\:progress) {
+    opacity: 1;
+}
+
+
+.animate\:progress {
+    animation: indicator 850ms ease-in-out infinite;
+}
+
+
+.animate\:wiggle {
+    animation: wiggle 0.5s ease;
+}
+
+
+.animate\:progress {
+    animation: indicator 850ms ease-in-out infinite;
+}
+
+
+.overflow {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.text-bold {
+    font-weight: var(--text-bold);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+  }
