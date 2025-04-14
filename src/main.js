@@ -4,6 +4,10 @@ import NewsletterForm from './form';
 document.addEventListener('DOMContentLoaded', () => {
     const Newsletter = new NewsletterForm("#newsletter-form");
 
+    if(localStorage.getItem('email-success')) {
+       Newsletter.showSuccess();
+    }
+
     window.addEventListener('resize', () => {
       window.matchMedia("(min-width: 57.5rem)").matches ? Newsletter.isDesktop =  true : Newsletter.isDesktop = false;
     });

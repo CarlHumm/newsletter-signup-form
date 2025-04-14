@@ -26,6 +26,7 @@
     @include large{
         flex-direction: row;
         padding: var(--spacing-400);
+        padding-inline-start: var(--spacing-800);
         gap: var(--spacing-800);
     }
 
@@ -71,14 +72,17 @@
         position:relative;
         flex: 1 1 50%;
         display: flex;
+        overflow: hidden;
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
-        background: var(--blue-700);
-        overflow: hidden;
-        mask-image: radial-gradient(ellipse 250% 180% at center, 
-        rgba(0, 0, 0, 1) 15%, 
-        rgba(0, 0, 0, 0.8) 40%, 
-        rgba(0, 0, 0, 0) 80%);
+
+        @include medium {
+            background: var(--blue-700);
+            mask-image: radial-gradient(ellipse 250% 180% at center, 
+            rgba(0, 0, 0, 1) 15%, 
+            rgba(0, 0, 0, 0.8) 40%, 
+            rgba(0, 0, 0, 0) 80%);
+        }
 
         img {
             width: 100%;
